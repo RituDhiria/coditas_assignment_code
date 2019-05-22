@@ -1,0 +1,24 @@
+
+<div style="background-color:darkblue;height:60px">
+<select name="name" style="margin-left:30%;height:70%; width:15%; margin-top:1%;margin-bottom:4px">
+  <option value="name">Sort By Name</option>
+  <option value="id">Sort By ID</option>
+  
+</select>
+<input
+    (keyup)="searchTerm$.next($event.target.value)" style="margin-left:5%; margin-top:1%;width:15%;height:59%">
+</div>
+<div align="center">
+<ul *ngIf="results">
+  <li *ngFor="let result of results | slice:0:9">
+  
+ 
+  
+    <a href="{{ result.latest }}" target="_blank">
+      {{ result.name }}
+    </a>
+
+  </li>
+ 
+</ul>
+</div>
